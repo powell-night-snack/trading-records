@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Options Trading Record · Little sea</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; }
+.container { max-width: 960px; margin: 0 auto; }
+h1 { color: #58a6ff; font-size: 26px; margin-bottom: 4px; }
+.subtitle { color: #8b949e; font-size: 14px; margin-bottom: 24px; }
+h2 { color: #58a6ff; font-size: 20px; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #21262d; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center; }
+.card .label { color: #8b949e; font-size: 12px; margin-bottom: 4px; }
+.card .value { font-size: 22px; font-weight: bold; }
+.pos { color: #3fb950; }
+.neg { color: #f85149; }
+.neutral { color: #58a6ff; }
+
+table { width: 100%; border-collapse: collapse; margin-bottom: 16px; background: #161b22; border-radius: 8px; overflow: hidden; border: 1px solid #30363d; }
+th { background: #21262d; color: #58a6ff; padding: 10px 8px; text-align: center; font-size: 13px; font-weight: 600; white-space: nowrap; }
+td { padding: 9px 8px; text-align: center; border-top: 1px solid #21262d; font-size: 13px; color: #e6edf3; }
+tr:hover { background: #1c2128; }
+.total-row { background: #1c2128 !important; }
+.total-row td { border-top: 2px solid #30363d; font-weight: bold; color: #58a6ff; }
+
+.badge { display: inline-block; padding: 2px 6px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+.badge-call { background: #1f3d2a; color: #3fb950; }
+.badge-put { background: #3d1f1f; color: #f85149; }
+
+details { margin: 10px 0; }
+summary { cursor: pointer; padding: 10px 14px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; font-size: 14px; color: #58a6ff; font-weight: 600; user-select: none; }
+summary:hover { background: #1c2128; }
+details[open] summary { border-radius: 8px 8px 0 0; border-bottom: none; }
+.detail-content { background: #161b22; border: 1px solid #30363d; border-top: none; border-radius: 0 0 8px 8px; padding: 12px; }
+
+.footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #21262d; text-align: center; color: #484f58; font-size: 12px; }
+.empty-note { color: #484f58; font-style: italic; padding: 20px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📊 Options Trading Record</h1>
+<div class="subtitle">@xiaohaiwithsea · Live Trading · P&L Transparency</div>
+
+<!-- 1. All-Time Performance -->
+<h2>📈 All-Time Performance</h2>
+<div class="cards">
+  <div class="card"><div class="label">Total Invested</div><div class="value neutral">$4,293.89</div></div>
+  <div class="card"><div class="label">Total P&L</div><div class="value pos">+$862.48</div></div>
+  <div class="card"><div class="label">TTL ROI</div><div class="value pos">+20.1%</div></div>
+  <div class="card"><div class="label">Win Rate</div><div class="value neutral">8W 4L (66.7%)</div></div>
+  <div class="card"><div class="label">Trading Days</div><div class="value neutral">3 Days</div></div>
+</div>
+
+<!-- 2. This Week Summary -->
+<h2>📅 W31 Weekly Summary (7/29 - 7/31)</h2>
+<table>
+<tr><th>Date</th><th>Trades</th><th>W/L (Win%)</th><th>Invested ($)</th><th>P&L ($)</th><th>Day ROI</th><th>Cum. Invested ($)</th><th>Cum. P&L ($)</th><th>Cum. ROI</th><th>Notes</th></tr>
+<tr><td><b>7/29</b></td><td>4</td><td>3W 1L (75%)</td>
+<td>1,358.52</td><td class="pos">+89.45</td><td class="pos">+6.6%</td>
+<td>1,358.52</td><td class="pos">+89.45</td><td class="pos">+6.6%</td>
+<td style="text-align:left;font-size:12px;color:#8b949e">Framework validation day</td></tr>
+<tr><td><b>7/30</b></td><td>5</td><td>2W 3L (40%)</td>
+<td>1,552.14</td><td class="neg">-240.46</td><td class="neg">-15.5%</td>
+<td>2,910.66</td><td class="neg">-151.01</td><td class="neg">-5.2%</td>
+<td style="text-align:left;font-size:12px;color:#8b949e">NBIS stop-loss, discipline held</td></tr>
+<tr><td><b>7/31</b></td><td>3</td><td>3W 0L (100%)</td>
+<td>1,383.23</td><td class="pos">+1013.49</td><td class="pos">+73.3%</td>
+<td>4,293.89</td><td class="pos">+862.48</td><td class="pos">+20.1%</td>
+<td style="text-align:left;font-size:12px;color:#8b949e">Conviction position, MSFT +171.6% 🔥</td></tr>
+<tr class="total-row"><td>TTL Week</td><td>12</td><td>8W 4L (67%)</td>
+<td>4,293.89</td><td class="pos">+862.48</td><td class="pos">+20.1%</td>
+<td colspan="3" style="text-align:center;font-size:12px">—— Week Complete ——</td></tr>
+</table>
+
+<!-- 3. Weekly History -->
+<h2>📋 Weekly History</h2>
+<table>
+<tr><th>Week</th><th>Date Range</th><th>Trades</th><th>W/L (Win%)</th><th>Invested ($)</th><th>P&L ($)</th><th>Week ROI</th></tr>
+<tr class="total-row"><td>W31</td><td>7/29-7/31</td><td>12</td><td>8W 4L (67%)</td>
+<td>4,293.89</td><td class="pos">+862.48</td><td class="pos">+20.1%</td></tr>
+</table>
+<p class="empty-note">More weeks to come</p>
+
+<!-- 4. Daily Trade Details (collapsible) -->
+<h2>📝 Daily Trade Details</h2>
+<details><summary>📅 7/29 · 3W 1L (75%) · Invested $1,358.52 · P&L <span class="pos">+$89.45</span> · ROI <span class="pos">+6.6%</span></summary>
+<div class="detail-content"><table>
+<tr><th>Ticker</th><th>Type</th><th>Expiry</th><th>Strike</th><th>Invested ($)</th><th>P&L ($)</th><th>ROI</th></tr>
+<tr><td><b>AAPL</b></td><td><span class="badge badge-put">PUT</span></td><td>0729</td><td>$340</td>
+<td>153.05</td><td class="pos">+31.85</td><td class="pos">+20.8%</td></tr>
+<tr><td><b>GOOG</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$345</td>
+<td>170.02</td><td class="pos">+39.92</td><td class="pos">+23.5%</td></tr>
+<tr><td><b>NBIS</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$160</td>
+<td>882.32</td><td class="pos">+53.91</td><td class="pos">+6.1%</td></tr>
+<tr><td><b>TGT</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$150</td>
+<td>153.13</td><td class="neg">-36.23</td><td class="neg">-23.7%</td></tr>
+<tr class="total-row"><td colspan="4">TTL</td><td>1,358.52</td>
+<td class="pos">+89.45</td>
+<td class="pos">+6.6%</td></tr>
+</table></div></details>
+<details><summary>📅 7/30 · 2W 3L (40%) · Invested $1,552.14 · P&L <span class="neg">$-240.46</span> · ROI <span class="neg">-15.5%</span></summary>
+<div class="detail-content"><table>
+<tr><th>Ticker</th><th>Type</th><th>Expiry</th><th>Strike</th><th>Invested ($)</th><th>P&L ($)</th><th>ROI</th></tr>
+<tr><td><b>GOOG</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$335</td>
+<td>184.02</td><td class="pos">+38.92</td><td class="pos">+21.1%</td></tr>
+<tr><td><b>MSFT</b></td><td><span class="badge badge-call">CALL</span></td><td>0803</td><td>$465</td>
+<td>403.00</td><td class="neg">-86.08</td><td class="neg">-21.4%</td></tr>
+<tr><td><b>NBIS</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$192.5</td>
+<td>583.05</td><td class="neg">-196.08</td><td class="neg">-33.6%</td></tr>
+<tr><td><b>ORCL</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$130</td>
+<td>219.01</td><td class="pos">+39.86</td><td class="pos">+18.2%</td></tr>
+<tr><td><b>QQQ</b></td><td><span class="badge badge-put">PUT</span></td><td>0730</td><td>$675</td>
+<td>163.06</td><td class="neg">-37.08</td><td class="neg">-22.7%</td></tr>
+<tr class="total-row"><td colspan="4">TTL</td><td>1,552.14</td>
+<td class="neg">-240.46</td>
+<td class="neg">-15.5%</td></tr>
+</table></div></details>
+<details><summary>📅 7/31 · 3W 0L (100%) · Invested $1,383.23 · P&L <span class="pos">+$1013.49</span> · ROI <span class="pos">+73.3%</span></summary>
+<div class="detail-content"><table>
+<tr><th>Ticker</th><th>Type</th><th>Expiry</th><th>Strike</th><th>Invested ($)</th><th>P&L ($)</th><th>ROI</th></tr>
+<tr><td><b>GOOG</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$340</td>
+<td>903.17</td><td class="pos">+552.74</td><td class="pos">+61.2%</td></tr>
+<tr><td><b>MSFT</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$460</td>
+<td>237.07</td><td class="pos">+406.83</td><td class="pos">+171.6%</td></tr>
+<tr><td><b>ORCL</b></td><td><span class="badge badge-call">CALL</span></td><td>0731</td><td>$130</td>
+<td>242.99</td><td class="pos">+53.92</td><td class="pos">+22.2%</td></tr>
+<tr class="total-row"><td colspan="4">TTL</td><td>1,383.23</td>
+<td class="pos">+1013.49</td>
+<td class="pos">+73.3%</td></tr>
+</table></div></details>
+
+<h2>🏆 Key Metrics</h2>
+<div class="cards">
+  <div class="card"><div class="label">Best Trade</div><div class="value pos" style="font-size:16px">MSFT CALL +171.6%</div></div>
+  <div class="card"><div class="label">Worst Trade</div><div class="value neg" style="font-size:16px">NBIS CALL -33.6%</div></div>
+  <div class="card"><div class="label">Best Day</div><div class="value pos" style="font-size:16px">7/31 +$1,013.49</div></div>
+  <div class="card"><div class="label">Worst Day</div><div class="value neg" style="font-size:16px">7/30 -$240.46</div></div>
+</div>
+
+<div class="footer">
+  <p>Updated regularly · Data from Tiger Broker live account</p>
+  <p style="margin-top:6px">X: @xiaohaiwithsea</p>
+  <p style="margin-top:6px;color:#484f58">⚠️ For educational purposes only. Options trading carries significant risk of loss.</p>
+</div>
+
+</div></body></html>
